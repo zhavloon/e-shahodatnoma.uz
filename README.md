@@ -1,1 +1,1 @@
-# e-shahodatnoma.uz
+# e-shahodatnoma.uz.MUKUMJONOV-JAVLONBEK-KAMOLIDDIN-O'G'LI
