@@ -7,20 +7,18 @@
 <title>e-shahodatnoma.uz</title>
 
 <style>
-body {
-    margin: 0;
-    background: #808080;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+html, body {
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100%;
+    background:#eee;
 }
 
-canvas {
-    background: white;
-    width: 210mm;
-    max-width: 100%;
-    height: auto;
-    margin-top: 10px;
+iframe {
+    width:100%;
+    height:100vh;
+    border:none;
 }
 </style>
 
@@ -28,43 +26,7 @@ canvas {
 
 <body>
 
-<canvas id="pdf-page"></canvas>
-
-<script src="pdf.min.js"></script>
-
-<script>
-
-pdfjsLib.GlobalWorkerOptions.workerSrc = 
-"pdf.worker.min.js";
-
-const pdfFile = "e-shahodatnoma.uz.pdf";
-
-pdfjsLib.getDocument(pdfFile).promise.then(function(pdf){
-
-    pdf.getPage(1).then(function(page){
-
-        let scale = 1.25;
-
-        let viewport = page.getViewport({
-            scale: scale
-        });
-
-        let canvas = document.getElementById("pdf-page");
-        let context = canvas.getContext("2d");
-
-        canvas.width = viewport.width;
-        canvas.height = viewport.height;
-
-        page.render({
-            canvasContext: context,
-            viewport: viewport
-        });
-
-    });
-
-});
-
-</script>
+<iframe src="e-shahodatnoma.uz.pdf#view=Fit"></iframe>
 
 </body>
 </html>
